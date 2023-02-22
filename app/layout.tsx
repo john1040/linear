@@ -1,5 +1,6 @@
+import { Header } from '@/components/header'
 import './globals.css'
-
+import { Container } from '@/components/container'
 export default function RootLayout({
   children,
 }: {
@@ -12,7 +13,20 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <div>
+          <Header />
+          <main className='pt-[var(--navigation-height)]'>
+            {children}
+          </main>
+          <footer>
+            <Container>
+              footer
+            </Container>
+          </footer>
+        </div>
+
+      </body>
     </html>
   )
 }
